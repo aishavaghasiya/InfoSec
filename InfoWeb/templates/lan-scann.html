@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSec</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script defer src="{% static 'script.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">InfoSec</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- aleart box for ip Validation-->
+        {% if error_message %}
+        <div class="alert-box" id="alertBox">
+            <div class="alert-content">
+                <strong>ERROR !! {{ error_message }}</strong>
+            </div>
+            <button class="close-icon" id="closeBtn">✖</button>
+        </div>
+        {% endif %}
+        
+        <h2 class="scan-title">Search all connected devices by scanning local IP</h2>
+        <h class="scan-title2">Secure your digital assets with our expert <a href="/services">InfoSec services<a></h>
+        
+            <div class="box1">
+                <form id="scanForm" method="POST" action="{% url 'lan-scann' %}">
+                    {% csrf_token %}
+                    <div class="input-group2">
+                        <input class="in-form2" type="text" id="ipAddress" name="ip-Address" placeholder="Enter IP Address" required>
+                    </div>
+            
+                    <p class="example-text2"><strong>Example:</strong> IP Address 192.168.1.1</p>
+            
+                    <button type="submit" id="scan-button" class="search-btn2">Start Scan</button>
+                </form>
+            </div>
+            <!--loading animation -->
+            <div id="loading" class="loader-d">
+                <div class="loader"></div>
+            </div>
+
+            <div>
+                {% if devices %}
+                <h3 class="result-title">Connected Devices:</h3>
+                <div class="result-box">
+                    <table border="1">
+                        <tr>
+                            <th>IP Address</th>
+                            <th>MAC Address</th>
+                        </tr>
+                        {% for device in devices %}
+                        <tr>
+                            <td>{{ device.ip }}</td>
+                            <td>{{ device.mac }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                {% endif %}
+            </div>
+        
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Logo & Address -->
+            <div class="footer-left">
+                <h2 class="footer-logo">InfoSec</h2>
+                <p class="address">123 Cyber Security <br>Ahmedabad, Gujrat 380001<br>INDIA</p>
+            </div>
+    
+            <!-- Middle Section: Solutions -->
+            <div class="footer-middle">
+                <h3 class="options">Options</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="contact">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Middle Right: Contact & Join Us -->
+            <div class="footer-contact">
+                <a href="contact" class="footer-button">Contact Us</a>
+                <a href="https://www.linkedin.com/in/radhen-delvadiya-018886233/" class="footer-button">Join Us</a>
+            </div>
+    
+            <!-- Right Section: Social Media Icons -->
+            <div id="social-icons" class="footer-right"></div>
+        </div>
+    
+        <!-- Bottom Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2024 InfoSec. All Rights Reserved. | <a href="services">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

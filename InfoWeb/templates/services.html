@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfoSec</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <script defer src="{% static 'script.js' %}"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">InfoSec</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div class="services">
+        <h2>Our Services</h2>
+        <p class="subtitle">We offer top-notch cyber-security solutions</p>
+    </div>
+    <div class="service-c3">
+        <section class="services">
+            <div class="services-container">
+                <div class="service-card hidden">
+                    <img src="{% static 'img/image3.png' %}" />
+                    <div class="service-content">
+                        <h3>Port scaning by InfoSec</h3>
+                        <p>
+                            Identify open and vulnerable ports on any IP address with our port scanning service.
+                            Enhance your network security by detecting potential threats before they become risks.
+                        </p>
+                        <a href="/scann" class="s-btn">Let's scan!!</a>
+                    </div>
+                </div>
+        
+                    <div class="service-card hidden">
+                        <img src="{% static 'img/image2.png' %}" />
+                        <div class="service-content">
+                            <h3>Local area network scanning by InfoSec</h3>
+                            <p>
+                              Our cyber security service scans your local network to detect vulnerabilities and provides a real-time list of all connected devices. 
+                              Stay secure by identifying potential threats.
+                            </p>
+                            <a href="lan_scann" class="s-btn">Let's scan!!</a>
+                        </div>
+                    </div>
+        
+                    <div class="service-card hidden">
+                        <img src="{% static 'img/image4-3.png' %}" />
+                        <div class="service-content">
+                            <h3>Password strength checking by InfoSec</h3>
+                            <p>
+                              Our password strength checking service analyzes your passwords for security weaknesses and provides instant feedback. 
+                              Strengthen your protection with smarter, more secure password choices.
+                            </p>
+                            <a href="/pass_scann" class="s-btn">Let's check!!</a>
+                        </div>
+                    </div>
+                    <div class="service-card hidden">
+                      <img src="{% static 'img/image5-2.png' %}" />
+                      <div class="service-content">
+                          <h3>Sub-Domain Enumeration by InfoSec</h3>
+                          <p>
+                            Our web-based domain enumerator service scans and lists subdomains,  
+                            Let's identify exposed subdomains and strengthen your defenses with our web-based domain enumeration tool.
+                          </p>
+                          <a href="/domain_enum" class="s-btn">Let's find!!</a>
+                      </div>
+                  </div>
+                  <div class="service-card hidden">
+                    <img src="{% static 'img/image6-1.png' %}" />
+                    <div class="service-content">
+                        <h3>Google predefine custome dork by InfoSec</h3>
+                        <p>
+                          Our predefined dork provider service offers a curated list of advanced search queries to help uncover hidden vulnerabilities and sensitive data. 
+                          Enhance your cybersecurity research with powerful, ready-to-use dorks.
+                        </p>
+                        <a href="/google_dork" class="s-btn">Let's search!!</a>
+                  </div>
+                  <div class="service-card hidden">
+                    <img src="{% static 'img/image6-1.png' %}" />
+                    <div class="service-content">
+                        <h3>Evo OS InfoSec</h3>
+                        <p>
+                          Use web besed os created by InfoSec 
+                        </p>
+                        <a href="/Evo_os" class="s-btn">Let's go!!</a>
+                  </div>
+              </div>
+        </section>
+    </div>
+
+<!-- footer section -->
+    <footer>
+      <div class="footer-container">
+        <!-- Left Section: Logo & Address -->
+        <div class="footer-left">
+          <h2 class="footer-logo">InfoSec</h2>
+          <p class="address">
+            123 Cyber Security <br />Ahmedabad, Gujrat 380001<br />INDIA
+          </p>
+        </div>
+
+        <!-- Middle Section: Solutions -->
+        <div class="footer-middle">
+          <h3 class="options">Options</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Middle Right: Contact & Join Us -->
+        <div class="footer-contact">
+          <a href="contact" class="footer-button">Contact Us</a>
+          <a href="https://www.linkedin.com/in/radhen-delvadiya-018886233/" class="footer-button">Join Us</a>
+        </div>
+
+        <!-- Right Section: Social Media Icons -->
+        <div id="social-icons" class="footer-right"></div>
+      </div>
+
+      <!-- Bottom Copyright Section -->
+      <div class="footer-bottom">
+        <p>
+          © 2024 InfoSec. All Rights Reserved. |
+          <a href="services">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+

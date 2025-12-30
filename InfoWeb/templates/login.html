@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSec</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script defer src="{% static 'script.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+        <input class="in-form" type="text" id="username" name="username" placeholder="Enter User name" required>
+        <input class="in-form" type="email" id="email" name="email" placeholder="Enter Email address" required>
+        <select id="role" name="role" required>
+            <option value="user">user</option>
+            <option value="org">organization</option>
+        </select>
+        <input class="in-form" type="password" id="password" name="password" placeholder="Enter password" required>
+        <button type="submit" >Sign In</button>
+    </form>
+
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input class="in-form" type="text" id="username1" name="username1" placeholder="Enter User name" required>
+        <input class="in-form" type="email" id="email1" name="email1" placeholder="Enter Email address" required>
+        <select id="role1" name="role1" required>
+            <option value="user">user</option>
+            <option value="org">organization</option>
+        </select>
+        <input class="in-form" type="password" id="password1" name="password1" placeholder="Enter password" required>
+        <button type="submit" >Sign In</button>
+    </form>
+
+    {% if success_message %}
+        <div id="successPopup" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">×</span>
+                <div class="popup-icon">✔</div>
+                <h2 class="p-success">Success!</h2>
+                <p id="successMessage">your login successfully!! </p>
+                <a href="/" class="popup-button" style="text-decoration: none;" onclick="closePopup()">Let's go!!<a>
+            </div>
+        </div>
+    {% endif %}
+</body>
+</html>

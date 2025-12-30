@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSec</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script defer src="{% static 'script.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">InfoSec</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="scan-title">Search all information about website using google dorks</h2>
+        <h class="scan-title2">Secure your digital assets with our expert <a href="/services">InfoSec services<a></h>
+            <div class="box1">
+                <form id="dorkForm" method="POST" action="{% url 'google_dork' %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <select name="dork_type" id="scanType" class="dropdown">
+                            {% for dork in dorks %}
+                            <option value="{{ dork }}">{{ dork }}</option>
+                            {% endfor %}
+                        </select>
+                        <input class="in-form" type="text" id="ipAddress" name="target" placeholder="Enter Website Name" required>
+                    </div>
+            
+                    <p class="example-text"><strong>Example:</strong> www.example.com</p>
+            
+                    <button type="submit" id="scan-button" class="search-btn">Search Google</button>
+                </form>
+            </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Logo & Address -->
+            <div class="footer-left">
+                <h2 class="footer-logo">InfoSec</h2>
+                <p class="address">123 Cyber Security <br>Ahmedabad, Gujrat 380001<br>INDIA</p>
+            </div>
+    
+            <!-- Middle Section: Solutions -->
+            <div class="footer-middle">
+                <h3 class="options">Options</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="contact">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Middle Right: Contact & Join Us -->
+            <div class="footer-contact">
+                <a href="contact" class="footer-button">Contact Us</a>
+                <a href="https://www.linkedin.com/in/radhen-delvadiya-018886233/" class="footer-button">Join Us</a>
+            </div>
+    
+            <!-- Right Section: Social Media Icons -->
+            <div id="social-icons" class="footer-right"></div>
+        </div>
+    
+        <!-- Bottom Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2024 InfoSec. All Rights Reserved. | <a href="services">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

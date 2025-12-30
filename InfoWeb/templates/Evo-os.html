@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web OS</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="wallpaper"></div>
+    
+    <div class="desktop-content">
+        {% block content %}
+        <!-- Your dynamic content (e.g., apps, icons) -->
+        {% endblock %}
+    </div>
+</body>
+</html>

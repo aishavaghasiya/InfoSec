@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSec</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script defer src="{% static 'script.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">InfoSec</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <!-- Hero Section -->
+    <div class="service-c2">
+        <section class="hero-container">
+            <div class="box">
+                <img class="laptop" src="{% static 'img/laptop6.png' %}" alt="Laptop Image">
+                <div class="content">
+                    <div class="heading-container">
+                        <h1 class="heading1" id="typing-text"></h1>
+                    </div>
+                    <!-- Empty Heading - JavaScript will add the text dynamically --> 
+                    <p class="heading2">Protect your business with cutting-edge cybersecurity automation! Our intelligent system detects threats in real time, responds instantly, and safeguards your data 24/7. Stay secure, stay automated!</p>
+                    
+                    <!-- Button with Background Change Effect -->
+                    <a href="/services" class="cta-button" id="toggleBackground">Explore Services</a>
+                </div>
+            </div>
+        </section>
+        <section class="info-sec">
+            <h2 class="section-title">InfoSec provide these featuers</h2>
+            <div class="services5">
+                <div class="service">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Easy Security</h3>
+                    <p>Protect your data effortlessly with automated security solutions designed for businesses of all sizes.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Free Pricing</h3>
+                    <p>No need to pay anything, Use free and secure your network and businesses by using InfoSec's services </p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Easy To Use</h3>
+                    <p>Usage of services easy with friendly UI, It give advantage against Threates and Make your network secure.</p>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title2">We provide these type of services</h2>
+        <div class="card-container2">
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Network Security</h3>
+                    <p>Protect your network from cyber threats with advanced security scanners and scan your network with advance methodology and with easy scanning techniques.</p>
+                    <a href="services">Explore Services</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Enumerate connected devices</h3>
+                    <p>Ensure the safety of your network with the finding of connected devices in the network and keep secure your network from out side of devices </p>
+                    <a href="services">Explore Services</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Sub-Domain Enumerator</h3>
+                    <p>finde an exposed Sub-domain by sub-domain finder and give security to all subdomaind before attacker attack on your domains.</p>
+                    <a href="services">Explore Services</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-database"></i>
+                    <h3>Password strength checker</h3>
+                    <p>Check your passwords strength and secure your authantication information by adding one layer more security in passwords.</p>
+                    <a href="services">Explore Services</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is InfoSec?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>InfoSec is a cyber-security service provider that helps businesses protect their networks, data, and systems from cyber threats. It gives you advantage against network threats. InfoSec is web base system that provide friendly UI and It is easy to use.</p>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does InfoSec secure my business?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer advanced threat detection, Local area network scanner, password sterangth checker, and Sub-Domain finder to safeguard your digital assets. It is work on local area network that help to secure all connected device from out side attack.</p>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the Local Area Network (LAN) scanner work?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our LAN scanner detects all devices connected to your network, helping you identify unauthorized connections and potential security risks in real-time.</p>
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is subdomain scanning, and why is it important?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Subdomain scanning helps discover all active subdomains associated with a website, allowing users to identify hidden security risks, misconfigurations, or exposed assets before attackers do.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I detect unknown devices connected to my network?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our locally connected device list feature scans your network and provides a real-time list of connected devices, helping you detect unauthorized access.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my data safe while using InfoSec’s scanning tools?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We do not store or share any scanned data. All scans are performed locally on your device, ensuring maximum privacy and security.</p>
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+
+    </div>
+
+    <!-- footer section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Logo & Address -->
+            <div class="footer-left">
+                <h2 class="footer-logo">InfoSec</h2>
+                <p class="address">123 Cyber Security <br>Ahmedabad, Gujrat 380001<br>INDIA</p>
+            </div>
+    
+            <!-- Middle Section: Solutions -->
+            <div class="footer-middle">
+                <h3 class="options">Options</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="contact">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Middle Right: Contact & Join Us -->
+            <div class="footer-contact">
+                <a href="contact" class="footer-button">Contact Us</a>
+                <a href="https://www.linkedin.com/in/radhen-delvadiya-018886233/" class="footer-button">Join Us</a>
+            </div>
+    
+            <!-- Right Section: Social Media Icons -->
+            <div id="social-icons" class="footer-right"></div>
+        </div>
+    
+        <!-- Bottom Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2024 InfoSec. All Rights Reserved. | <a href="services">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+

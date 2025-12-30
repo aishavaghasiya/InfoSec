@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSec</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script defer src="{% static 'script.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">InfoSec</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="c-container">
+        <p class="c-hading">Contact Us</p>
+        <div class="card-container">
+            <div class="card1">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>OUR MAIN OFFICE</h3>
+                <p>123 Cyber Security <br>Ahmedabad, Gujrat 380001<br>INDIA</p>
+            </div>
+    
+            <div class="card1">
+                <i class="fas fa-phone-alt"></i>
+                <h3>PHONE NUMBER</h3>
+                <p>1111-0000-3333<br>103-031-301 </p>
+            </div>
+    
+            <div class="card1">
+                <i class="fas fa-envelope"></i>
+                <h3>EMAIL</h3>
+                <p><a href="mailto:hello@theme.com">radhendelvadiya@gmial.com</a></p>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="contact-form">
+                <h2>Get in touch</h2>
+                <h3><em>Stay secure and reach out to us today !!</em></h3>
+                <p>Have questions or need cybersecurity solutions? We're here to help! Contact us for expert guidance, support, and secure your digital world with confidence.</p>
+            </div>
+            <div class="form-container">
+                <form id="contactForm" action="{% url "contact" %}" method="POST">
+                    {% csrf_token %} 
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label>Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Surname</label>
+                            <input type="text" id="surname" name="surname" placeholder="Enter your Surname" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label>Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter a valid email address" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Mobile Number</label>
+                            <input type="tel" id="mobile" name="mobile" placeholder="Enter your Mobile Number" required>
+                        </div>
+                    </div>
+        
+                    <div class="input-box">
+                        <label>Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                    </div>
+        
+                    <button type="submit" class="contact-btn">SUBMIT</button>
+                </form>
+                <!-- Success message popup-->
+            {% if success_message %}
+            <div id="successPopup" class="popup-overlay">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup()">×</span>
+                    <div class="popup-icon">✔</div>
+                    <h2 class="p-success">Success!</h2>
+                    <p id="successMessage">Your response will be submitted successfully, Thank you for contacting us!! </p>
+                    <button class="popup-button" onclick="closePopup()">Go back!!</button>
+                </div>
+            </div>
+            {% endif %}
+    
+            <!-- Error Message -->
+            {% if error %}
+                <p class="error-msg">{{ error }}</p>
+            {% endif %}
+            </div>
+
+        </div>
+        <div class="c-space">
+            <div class="logos">
+                <div class="logos-slide">
+                  <img src="{% static 'img/logos/logo1.png' %}" />
+                  <img src="{% static 'img/logos/logo2.png' %}" />
+                  <img src="{% static 'img/logos/logo3.png' %}" />
+                  <img src="{% static 'img/logos/logo4.png' %}" />
+                  <img src="{% static 'img/logos/logo5.png' %}" />
+                  <img src="{% static 'img/logos/logo6.png' %}" />
+                  <img src="{% static 'img/logos/logo7.png' %}" />
+                  <img src="{% static 'img/logos/logo8.png' %}" />
+                </div>
+          
+                <div class="logos-slide">
+                    <img src="{% static 'img/logos/logo1.png' %}" />
+                    <img src="{% static 'img/logos/logo2.png' %}" />
+                    <img src="{% static 'img/logos/logo3.png' %}" />
+                    <img src="{% static 'img/logos/logo4.png' %}" />
+                    <img src="{% static 'img/logos/logo5.png' %}" />
+                    <img src="{% static 'img/logos/logo6.png' %}" />
+                    <img src="{% static 'img/logos/logo7.png' %}" />
+                    <img src="{% static 'img/logos/logo8.png' %}" />
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <!-- footer section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Logo & Address -->
+            <div class="footer-left">
+                <h2 class="footer-logo">InfoSec</h2>
+                <p class="address">123 Cyber Security <br>Ahmedabad, Gujrat 380001<br>INDIA</p>
+            </div>
+    
+            <!-- Middle Section: Solutions -->
+            <div class="footer-middle">
+                <h3 class="options">Options</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="contact">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Middle Right: Contact & Join Us -->
+            <div class="footer-contact">
+                <a href="contact" class="footer-button">Contact Us</a>
+                <a href="https://www.linkedin.com/in/radhen-delvadiya-018886233/" class="footer-button">Join Us</a>
+            </div>
+    
+            <!-- Right Section: Social Media Icons -->
+            <div id="social-icons" class="footer-right"></div>
+        </div>
+    
+        <!-- Bottom Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2024 InfoSec. All Rights Reserved. | <a href="services">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
